@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import java.lang.annotation.Target;
 import java.time.LocalDateTime;
 
+@Component
 @Entity
 @Getter
 @Setter
@@ -16,7 +17,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(
-        name = "customer",
         uniqueConstraints = {
                 @UniqueConstraint(
                         name = "email_unique",
@@ -26,7 +26,7 @@ import java.time.LocalDateTime;
 )
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long customerId;
     @Column(nullable = false)
     private String customerName;
