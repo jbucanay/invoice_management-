@@ -30,7 +30,9 @@ public class Customer {
     private String email;
     private String address;
     private String city;
-    private String state;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "state_id")
+    private State state;
     @Column(length = 10)
     private String zipCode;
     @CreationTimestamp
