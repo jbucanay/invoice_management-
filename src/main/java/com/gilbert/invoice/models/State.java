@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @ToString
 @Component
-@Table(
+@Table(name = "state",
         uniqueConstraints = {
                 @UniqueConstraint(
                         columnNames = "stateName",
@@ -26,6 +26,6 @@ public class State {
     @Column(nullable = false)
     private String stateName;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "tax_code")
+    @JoinColumn(name = "tax_code", nullable = false)
     private Tax tax;
 }
