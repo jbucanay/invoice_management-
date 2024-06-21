@@ -1,8 +1,16 @@
 package com.gilbert.invoice.models;
 
 import jakarta.persistence.*;
+import lombok.*;
+import org.springframework.stereotype.Component;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Component
 @Table(
         uniqueConstraints = {
                 @UniqueConstraint(
