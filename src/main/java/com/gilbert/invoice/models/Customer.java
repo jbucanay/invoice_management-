@@ -30,7 +30,7 @@ public class Customer {
     private String email;
     private String address;
     private String city;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "state_id")
     private State state;
     @Column(length = 10)
